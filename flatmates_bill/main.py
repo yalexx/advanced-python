@@ -1,7 +1,32 @@
-from flatmates_bill.flat import Bill, Flatmate
+from flask.views import MethodView
+from wtforms import Form, StringField
+from flask import Flask, render_template
 
-the_bill = Bill(120, "March 2021")
-john = Flatmate("John", 30)
-marry = Flatmate("Marry", 25)
-print('John pays: ', john.pays(the_bill, marry))
-print('Marry pays: ', marry.pays(the_bill, john))
+app = Flask(__name__)
+
+
+class HomePage(MethodView):
+
+    def get(self):
+        return render_template('index.html')
+
+
+class BillFormPage(MethodView):
+
+    def get(self):
+        bill_form = BillForm()
+        return render_template('bill_form_page.html', billform=bill_form)
+
+
+class ResultsPage(MethodView):
+    pass
+
+
+class BillForm(Form):
+    amount = StringField("Bill Amount: ")
+    period = StringField("Bill Period: ")
+
+
+app.add_url_rule('/', view_func=HomePage.as_view('home_page'))
+app.add_url_rule('/bill', view_func=BillFormPage.as_view('bill_form_page'))
+app.run(debug=True)
