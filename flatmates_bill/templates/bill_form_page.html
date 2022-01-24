@@ -8,7 +8,15 @@
 <h2>The Bill Form</h2>
 <p>Fill in the form and click the button to get the results</p>
 <form>
-    {{billform.amount.label}}{{billform.amount}}
+    {{billform.amount.label}} {{billform.amount}}
+    <br>
+    {{billform.period.label}} {{billform.period}}
+    <hr>
+    <p>First Flatmate</p>
+    {{billform.name1.label}} {{billform.name1}}
+    <br>
+    <p>Second Flatmate</p>
+    {{billform.name2.label}} {{billform.name2}}
 </form>
 </body>
 </html>

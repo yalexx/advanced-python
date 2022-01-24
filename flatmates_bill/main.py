@@ -26,6 +26,12 @@ class BillForm(Form):
     amount = StringField("Bill Amount: ")
     period = StringField("Bill Period: ")
 
+    name1 = StringField("Name: ")
+    days_in_house1 = StringField("Days in the house: ")
+
+    name2 = StringField("Name: ")
+    days_in_house2 = StringField("Days in the house: ")
+
 
 app.add_url_rule('/', view_func=HomePage.as_view('home_page'))
 app.add_url_rule('/bill', view_func=BillFormPage.as_view('bill_form_page'))
