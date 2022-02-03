@@ -34,7 +34,10 @@ class Square:
         pass
 
 
-canvas1 = Canvas(100, 100, 'red')
-rect1 = Rectangle(100, 100, 100, 100, 'red')
-rect1.draw(canvas1)
+def run_canvas():
+    canvas1 = Canvas(100, 100, 'red')
+    rect1 = Rectangle(100, 100, 100, 100, 'red')
+    rect1.draw(canvas1)
 
+
+run_canvas()

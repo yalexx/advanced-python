@@ -1,5 +1,6 @@
 from random import randint
 
+
 class Point:
 
     def __init__(self, x, y):
@@ -23,11 +24,13 @@ class Rectangle:
         self.upright = upright
 
 
-rectangle = Rectangle(Point(randint(0, 9), randint(0, 9)),
-                      Point(randint(10, 19), randint(10, 19)))
+def run_app():
+    rectangle = Rectangle(Point(randint(0, 9), randint(0, 9)),
+                          Point(randint(10, 19), randint(10, 19)))
+    user_point = Point(float(input('Guess X:')),
+                       float(input('Guess Y:')))
+    print('Your points are inside rectangle: ',
+          user_point.falls_in_rectangle(rectangle))
 
-user_point = Point(float(input('Guess X:')),
-                    float(input('Guess Y:')))
 
-print('Your points are inside rectangle: ',
-      user_point.falls_in_rectangle(rectangle))
+run_app()

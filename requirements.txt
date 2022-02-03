@@ -1,0 +1,4 @@
+reportlab~=3.5.34
+Flask~=2.0.2
+WTForms~=3.0.1
+Kivy~=2.0.0
